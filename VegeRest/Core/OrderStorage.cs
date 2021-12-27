@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VegeRest
+namespace VegeRest.Core
 {
     public interface IOrderStorage
     {
@@ -29,14 +29,7 @@ namespace VegeRest
 
         public void ReadyByNumber(string orderNum)
         {
-            int id = 0;
-            foreach (var el in Orders)
-            {
-                if (el.OrderNumber == orderNum)
-                {
-                    id = Orders.IndexOf(el);
-                }
-            }
+            int id = Orders.FindIndex(p => p.OrderNumber == orderNum);
             Orders[id].Status = "Готов";
         }
 
@@ -72,5 +65,9 @@ namespace VegeRest
                 }
             }
         }
+
+        public List<Order> GetAll() => Orders;
+
+        public Order Get(string orderNum) => Orders.FirstOrDefault(p => p.OrderNumber == orderNum);
     }
 }
