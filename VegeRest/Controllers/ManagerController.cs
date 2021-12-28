@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using VegeRest.Core;
+using CoreLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace VegeRest.Controllers
     public class ManagerController : Controller
     {
         private IWebHostEnvironment Environment;
-        private string path;
+        private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
 
         // ссылка на объект - хранилище заказов
         OrderStorage orderStorage;
@@ -19,14 +19,10 @@ namespace VegeRest.Controllers
         public ManagerController(IWebHostEnvironment _environment, IOrderStorage _projectStorage)
         {
             orderStorage = (OrderStorage)_projectStorage;
-
-            // получить путь до wwwroot
-            Environment = _environment;
-            path = Environment.WebRootPath;
         }
         public IActionResult Index()
         {
-            orderStorage.ReadFromFile(path + "/data/orders.txt");
+            orderStorage.ReadFromFile(path);
             var orders = orderStorage.Orders;
             
             return View(orders);
@@ -35,7 +31,7 @@ namespace VegeRest.Controllers
         public IActionResult Ready(string orderNum)
         {
             orderStorage.ReadyByNumber(orderNum);
-            orderStorage.WriteInFile(path + "/data/orders.txt");
+            orderStorage.WriteInFile(path);
             return RedirectToAction("Index");
         }
     }

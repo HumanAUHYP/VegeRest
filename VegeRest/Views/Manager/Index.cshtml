@@ -1,4 +1,4 @@
-﻿@using VegeRest.Core;
+﻿@using CoreLibrary;
 @model List<Order>
 
 <h2>My Orders</h2>
@@ -6,7 +6,7 @@
 <br />
 
 <div class="row">
-    @foreach (var order in (Model.Where(a => a.Status == "Принят").ToList()))
+    @foreach (var order in Model)
     {
         <div class="col-md-4 mb-5">
             <div class="card h-100">

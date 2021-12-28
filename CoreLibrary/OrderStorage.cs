@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VegeRest.Core
+namespace CoreLibrary
 {
     public interface IOrderStorage
     {

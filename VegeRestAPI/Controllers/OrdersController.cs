@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using VegeRest.Core;
+using CoreLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace VegeRestAPI.Controllers
 {
     [ApiController]
-    [Route("Orders")]
+    [Route("[controller]")]
 
     public class OrdersController : ControllerBase
     {
