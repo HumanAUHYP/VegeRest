@@ -19,6 +19,15 @@ namespace VegeRestConsoleApp
                 var orders = orderStorage.Orders;
                 Console.WriteLine("");
             }
+            Console.WriteLine("1. Manager");
+            Console.WriteLine("2. Waiter");
+            string answer = Console.ReadLine();
+            if (answer == "1")
+            {
+                orderStorage.ReadFromFile(path);
+                var orders = orderStorage.Orders;
+                Console.WriteLine("");
+            }
         }
     }
 }
