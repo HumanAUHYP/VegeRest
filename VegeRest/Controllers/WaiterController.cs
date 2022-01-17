@@ -10,7 +10,6 @@ namespace VegeRest.Controllers
 {
     public class WaiterController : Controller
     {
-        private IWebHostEnvironment Environment;
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt"; //можно лучше, настроить подключение через Бд/Rest API
 
         // ссылка на объект - хранилище заказов

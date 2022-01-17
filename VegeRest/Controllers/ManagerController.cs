@@ -10,7 +10,6 @@ namespace VegeRest.Controllers
 {
     public class ManagerController : Controller
     {
-        private IWebHostEnvironment Environment;
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt"; // Можно лучше - Путь лучше хранить динамически
 
         // ссылка на объект - хранилище заказов
