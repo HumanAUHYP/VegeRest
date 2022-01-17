@@ -7,15 +7,15 @@ namespace CoreLibrary
 {
     public class Order
     {
-        public string OrderNumber { get; set; }
+        public string OrderNumber { get; set; } //не настроен сеттер, можно лучше
         public string TableNumber { get; set; }
         public string Product { get; set; }
         public string Status { get; set; }
 
         public Order()
-        { }
+        { } //нужно исправить, не форматированный код 
 
-        public Order(string str)
+        public Order(string str) // Хорошо! Есть конструкторы
         {
             var data = str.Split(';');
             OrderNumber = data[0];

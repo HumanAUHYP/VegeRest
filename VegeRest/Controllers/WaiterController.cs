@@ -11,7 +11,7 @@ namespace VegeRest.Controllers
     public class WaiterController : Controller
     {
         private IWebHostEnvironment Environment;
-        private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
+        private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt"; //можно лучше, настроить подключение через Бд/Rest API
 
         // ссылка на объект - хранилище заказов
         OrderStorage orderStorage;
@@ -35,7 +35,7 @@ namespace VegeRest.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Order order)
+        public IActionResult Add(Order order) // Хорошо! Простые контроллеры
         {
             orderStorage.Add(order);
             orderStorage.WriteInFile(path);

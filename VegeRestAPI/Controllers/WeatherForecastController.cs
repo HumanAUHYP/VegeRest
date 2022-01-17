@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VegeRestAPI.Controllers
+namespace VegeRestAPI.Controllers // Нужно исправить - удалить ненужный код из проекта
 {
     [ApiController]
     [Route("[controller]")]

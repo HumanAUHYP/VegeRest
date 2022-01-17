@@ -3,7 +3,7 @@ using CoreLibrary;
 
 namespace VegeRestConsoleApp
 {
-    class Program
+    class Program // Нужно исправить - Нет программы, нужно дописать
     {
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
         OrderStorage orderStorage;
@@ -13,47 +13,6 @@ namespace VegeRestConsoleApp
             Console.WriteLine("1. Manager");
             Console.WriteLine("2. Waiter");
             string answer = Console.ReadLine();
-            if (answer == "1")
-            {
-                orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
-                Console.WriteLine("");
-            }
-            Console.WriteLine("1. Manager");
-            Console.WriteLine("2. Waiter");
-            string answer = Console.ReadLine();
-            if (answer == "1")
-            {
-                orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
-                Console.WriteLine("");
-            }
-            Console.WriteLine("1. Manager");
-            Console.WriteLine("2. Waiter");
-            string answer = Console.ReadLine();
-            if (answer == "1")
-            {
-                orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
-                Console.WriteLine("");
-            }
-            Console.WriteLine("1. Manager");
-            Console.WriteLine("2. Waiter");
-            string answer = Console.ReadLine();
-            if (answer == "1")
-            {
-                orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
-                Console.WriteLine("");
-            }
-            Console.WriteLine("1. Manager");
-            Console.WriteLine("2. Waiter");
-            string answer = Console.ReadLine();
-            if (answer == "1")
-            {
-                orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
-                Console.WriteLine("");
             }
         }
     }

@@ -59,7 +59,7 @@ namespace CoreLibrary
         {
             using (var sw = new StreamWriter(path, false))
             {
-                foreach (var el in Orders)
+                foreach (var el in Orders) // Можно лучше - неправильное наименование переменных
                 {
                     sw.WriteLine(el);
                 }
