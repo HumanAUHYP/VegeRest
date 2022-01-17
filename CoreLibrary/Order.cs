@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoreLibrary
+namespace CoreLibrary //Проверяли Чийпеш Владислав и Шагиахметова Зиля
 {
     public class Order
     {
