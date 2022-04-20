@@ -27,15 +27,9 @@ namespace CoreLibrary
             Orders.Add(order);
         }
 
-        public void ReadyByNumber(string orderNum)
+        public void RemoveByNumber(string id)
         {
-            int id = Orders.FindIndex(p => p.OrderNumber == orderNum);
-            Orders[id].Status = "Готов";
-        }
-
-        public void RemoveByNumber(string orderNum)
-        {
-            Orders.RemoveAll(p => p.OrderNumber == orderNum);
+            Orders.RemoveAll(p => p.Id == int.Parse(id));
         }
 
         public void ReadFromFile(string path)
@@ -68,6 +62,6 @@ namespace CoreLibrary
 
         public List<Order> GetAll() => Orders;
 
-        public Order Get(string orderNum) => Orders.FirstOrDefault(p => p.OrderNumber == orderNum);
+        public Order Get(string id) => Orders.FirstOrDefault(p => p.Id == int.Parse(id));
     }
 }

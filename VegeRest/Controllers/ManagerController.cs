@@ -28,9 +28,22 @@ namespace VegeRest.Controllers
             return View(orders);
         }
 
-        public IActionResult Ready(string orderNum)
+        public IActionResult Add()
         {
-            orderStorage.ReadyByNumber(orderNum);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Order order)
+        {
+            orderStorage.Add(order);
+            orderStorage.WriteInFile(path);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Remove(string orderNum)
+        {
+            orderStorage.RemoveByNumber(orderNum);
             orderStorage.WriteInFile(path);
             return RedirectToAction("Index");
         }

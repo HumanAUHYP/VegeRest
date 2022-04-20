@@ -2,11 +2,8 @@
 @model List<Order>
 
 <h2>Menu</h2>
-<div class="row justify-content-end">
-    <a class="btn btn-primary" asp-controller="Manager"
-       asp-action="Add" role="button">Add new menu position</a>
-</div>
-<br>
+
+<br />
 
 <div class="row">
     @foreach (var order in Model)
@@ -21,14 +18,10 @@
                         <p class="font-weight-normal">@order.Description</p>
                     </div>
                     <div>
-                        <img class="card-img-top" src="@order.Image" />
+                        <img class="card-img-top" src="@order.Image"/>
                     </div>
-                    <div class="text-center">
-                        <a class="btn btn-danger" asp-controller="Manager"
-                           asp-action="Remove" asp-route-id="@order.Id"
-                           role="button">
-                            Remove
-                        </a>
+                    <div>
+                        <p class="font-weight-normal">Cost @order.Price $</p>
                     </div>
                 </div>
             </div>

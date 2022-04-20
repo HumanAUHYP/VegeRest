@@ -1,0 +1,1 @@
+5;GOLDFISH;This fish is gold!!;https://skazki.land/api/get-resized-image/zolotaya-ribka-da09c.png?width=1024&height=1024&fit=inside;100
