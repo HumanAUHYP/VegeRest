@@ -16,19 +16,19 @@ namespace VegeRest.Controllers
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
 
         // ссылка на объект - хранилище заказов
-        OrderStorage orderStorage;
+        MenuStorage menuStorage;
 
-        public ClientController(IWebHostEnvironment _environment, IOrderStorage _projectStorage)
+        public ClientController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
         {
-            orderStorage = (OrderStorage)_projectStorage;
+            menuStorage = (MenuStorage)_menuStorage;
         }
 
         public IActionResult Index()
         {
-            orderStorage.ReadFromFile(path);
-            var orders = orderStorage.Orders;
+            menuStorage.ReadFromFile(path);
+            var menues = menuStorage.Menues;
 
-            return View(orders);
+            return View(menues);
         }
     }
 }

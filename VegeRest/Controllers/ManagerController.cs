@@ -14,18 +14,18 @@ namespace VegeRest.Controllers
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
 
         // ссылка на объект - хранилище заказов
-        OrderStorage orderStorage;
+        MenuStorage menuStorage;
 
-        public ManagerController(IWebHostEnvironment _environment, IOrderStorage _projectStorage)
+        public ManagerController(IWebHostEnvironment _environment, IMenuStorage _menuStorage)
         {
-            orderStorage = (OrderStorage)_projectStorage;
+            menuStorage = (MenuStorage)_menuStorage;
         }
         public IActionResult Index()
         {
-            orderStorage.ReadFromFile(path);
-            var orders = orderStorage.Orders;
+            menuStorage.ReadFromFile(path);
+            var menues = menuStorage.Menues;
             
-            return View(orders);
+            return View(menues);
         }
 
         public IActionResult Add()
@@ -34,17 +34,17 @@ namespace VegeRest.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Order order)
+        public IActionResult Add(Menu menu)
         {
-            orderStorage.Add(order);
-            orderStorage.WriteInFile(path);
+            menuStorage.Add(menu);
+            menuStorage.WriteInFile(path);
             return RedirectToAction("Index");
         }
 
-        public IActionResult Remove(string orderNum)
+        public IActionResult Remove(string id)
         {
-            orderStorage.RemoveByNumber(orderNum);
-            orderStorage.WriteInFile(path);
+            menuStorage.RemoveById(id);
+            menuStorage.WriteInFile(path);
             return RedirectToAction("Index");
         }
     }

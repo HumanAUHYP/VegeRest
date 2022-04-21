@@ -13,18 +13,18 @@ namespace VegeRestAPI.Controllers
 
     public class OrdersController : ControllerBase
     {
-        OrderStorage orderStorage;
-        public OrdersController(IOrderStorage _projectStorage)
+        MenuStorage orderStorage;
+        public OrdersController(IMenuStorage _projectStorage)
         {
-            orderStorage = (OrderStorage)_projectStorage;
+            orderStorage = (MenuStorage)_projectStorage;
         }
 
         //GET all action
         [HttpGet]
-        public ActionResult<List<Order>> GetAll() => orderStorage.GetAll();
+        public ActionResult<List<Menu>> GetAll() => orderStorage.GetAll();
 
         [HttpGet("{orderNum}")]
-        public ActionResult<Order> Get(string orderNum)
+        public ActionResult<Menu> Get(string orderNum)
         {
             var project = orderStorage.Get(orderNum);
 
@@ -35,14 +35,14 @@ namespace VegeRestAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Order order)
+        public IActionResult Create(Menu order)
         {
             orderStorage.Add(order);
             return CreatedAtAction(nameof(Create), new { orderNum = order.OrderNumber }, order);
         }
 
         [HttpPut("{orderNum}")]
-        public IActionResult Update(string orderNum, Order order)
+        public IActionResult Update(string orderNum, Menu order)
         {
             if (orderNum != order.OrderNumber)
                 return BadRequest();
@@ -64,7 +64,7 @@ namespace VegeRestAPI.Controllers
             if (project is null)
                 return NotFound();
 
-            orderStorage.RemoveByNumber(orderNum);
+            orderStorage.RemoveById(orderNum);
 
             return NoContent();
         }

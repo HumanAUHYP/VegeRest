@@ -1,5 +1,5 @@
 ﻿@using CoreLibrary;
-@model List<Order>
+@model List<Menu>
 
 <h2>Menu</h2>
 <div class="row justify-content-end">
@@ -17,19 +17,13 @@
                     <h2 class="card-title text-center">
                         <a>@order.Name</a>
                     </h2>
-                    <div>
-                        <p class="font-weight-normal">@order.Description</p>
-                    </div>
-                    <div>
-                        <img class="card-img-top" src="@order.Image" />
-                    </div>
-                    <div class="text-center">
-                        <a class="btn btn-danger" asp-controller="Manager"
-                           asp-action="Remove" asp-route-id="@order.Id"
-                           role="button">
-                            Remove
-                        </a>
-                    </div>
+                    <p class="font-weight-normal">@order.Description</p>
+                    <img class="card-img-top" src="@order.Image" />
+                    <a class="btn btn-lg btn-danger" asp-controller="Manager"
+                        asp-action="Remove" asp-route-id="@order.Id"
+                        role="button">
+                        Remove
+                    </a>
                 </div>
             </div>
         </div>

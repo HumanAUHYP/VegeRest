@@ -6,7 +6,7 @@ namespace VegeRestConsoleApp
     class Program
     {
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
-        OrderStorage orderStorage;
+        MenuStorage orderStorage;
         static void Main(string[] args)
         {
             
@@ -16,7 +16,7 @@ namespace VegeRestConsoleApp
             if (answer == "1")
             {
                 orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
+                var orders = orderStorage.Menues;
                 Console.WriteLine("");
             }
             Console.WriteLine("1. Manager");
@@ -25,7 +25,7 @@ namespace VegeRestConsoleApp
             if (answer == "1")
             {
                 orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
+                var orders = orderStorage.Menues;
                 Console.WriteLine("");
             }
             Console.WriteLine("1. Manager");
@@ -34,7 +34,7 @@ namespace VegeRestConsoleApp
             if (answer == "1")
             {
                 orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
+                var orders = orderStorage.Menues;
                 Console.WriteLine("");
             }
             Console.WriteLine("1. Manager");
@@ -43,7 +43,7 @@ namespace VegeRestConsoleApp
             if (answer == "1")
             {
                 orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
+                var orders = orderStorage.Menues;
                 Console.WriteLine("");
             }
             Console.WriteLine("1. Manager");
@@ -52,7 +52,7 @@ namespace VegeRestConsoleApp
             if (answer == "1")
             {
                 orderStorage.ReadFromFile(path);
-                var orders = orderStorage.Orders;
+                var orders = orderStorage.Menues;
                 Console.WriteLine("");
             }
         }
