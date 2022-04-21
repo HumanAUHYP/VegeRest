@@ -1,14 +1,16 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreLibrary;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace VegeRest.Controllers
 {
-    public class WaiterController : Controller
+    public class ClientController : Controller
     {
         private IWebHostEnvironment Environment;
         private string path = @"C:\Users\Human\source\repos\VegeRest\CoreLibrary\data\orders.txt";
@@ -16,7 +18,7 @@ namespace VegeRest.Controllers
         // ссылка на объект - хранилище заказов
         OrderStorage orderStorage;
 
-        public WaiterController(IWebHostEnvironment _environment, IOrderStorage _projectStorage)
+        public ClientController(IWebHostEnvironment _environment, IOrderStorage _projectStorage)
         {
             orderStorage = (OrderStorage)_projectStorage;
         }
